@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+void areaOfPentagon(float radius) //create function for area of pentagon with one input for radius
+{
+	const double PI = 3.14159265358979323846;
+	float sideLength, area; //create float variable for sideLength and Area
+	sideLength = 2 * radius * (sin(PI / 5)); //calculate sideLength
+	area = (5 * pow(sideLength, 2)) / (4 * tan(PI / 5)); //calculate the area of the pentagon
+	cout << "The area of the pentagon is: " << area << endl;
+
+}
+
+int main()
+{
+	cout << fixed;
+	cout.precision(2); //two decimal places 
+	cout << "Area of a Pentagon" << endl;
+	cout << "******************" << endl;
+
+	float radius;
+	cout << "Please enter the radius of a pentagon: ";//request radius input from user 
+	cin >> radius; //enter user input into the radius variable
+
+	areaOfPentagon(radius); // call areaOfPentagon function with the only parameter being radius
+
+	return 0;
+}
