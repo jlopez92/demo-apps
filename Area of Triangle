@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+void printAreaOfTriangle(float Ax, float Ay, float Bx, float By, float Cx, float Cy) {
+	//create function that takes in 6 variables
+
+
+
+	float triangleArea; //create float variable to hold area of triangle formulat without the absolute function
+	float Area; //take the absolute of the triangleArea variable to complete the formulat
+	triangleArea = (Ax * (By - Cy) + Bx * (Cy - Ay) + Cx * (Ay - By)) / 2; //calculate area of triangle without the absolute
+	Area = abs(triangleArea); //take the absolute using the abs function
+
+	cout << "Area of the triangle is: " << Area << endl; //print out the result
+}
+
+int main()
+{
+
+	cout.fixed;
+	cout.precision(4);
+
+	cout << "Calculate the area of a triangle by entering three coordinates. \n \n" << endl;
+
+	float X1, Y1, X2, Y2, X3, Y3; //create 6 variables to hold the 3 x,y coordinates 
+	cout << "Enter the first X(X1): "; //promt user for the first x cordinate on the first point
+	cin >> X1; //enter the user input into the X1 variable 
+				//repeat for the next 5 data points
+	cout << "Enter the first Y(Y1): ";
+	cin >> Y1;
+
+	cout << "Enter the second X(X2): ";
+	cin >> X2;
+
+	cout << "Enter the second Y(Y2): ";
+	cin >> Y2;
+
+	cout << "Enter the third X(X3): ";
+	cin >> X3;
+
+	cout << "Enter the third Y(Y3): ";
+	cin >> Y3;
+
+	printAreaOfTriangle(X1, Y1, X2, Y2, X3, Y3); // call the printAreaOfTriangle function
+
+	return 0;
+
+}
