@@ -1,0 +1,111 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+
+//function to calculate area of circle
+//input is radius
+//return value is the area as a double
+double circle(double radius) {
+	double area = 3.14 * pow(radius, 2);
+	return area;
+
+}
+
+//function to calculate are of triangle
+//input is height and width
+//return value is area as a double
+double triangle(double height, double width) {
+	double area = height * width;
+	area = area * 0.5;
+	return area;
+
+}
+
+//function to calculate are of rectangle
+//input is height and width
+//return value is area as a double
+double rectangle(double height, double width) {
+	double area = height * width;
+	return area;
+
+}
+
+//function to calculate are of square
+//input is side length
+//return value is area as a double
+double square(double sideLength) {
+	double area = sideLength * sideLength;
+	return area;
+}
+
+//void function to print the shape menu
+void printShapeMenu() {
+	cout << "Calculating Areas" << endl;
+	cout << "*******************" << endl;
+	cout << "A. Circle" << endl;
+	cout << "B. Triangle" << endl;
+	cout << "C. Rectangle" << endl;
+	cout << "D. Square" << endl;
+}
+int main() {
+
+	cout << fixed;
+	cout.precision(2);
+	//calling shape menu function
+	printShapeMenu();
+
+	//string variable for the shape chosen
+	string shape;
+	//prompt user for shape 
+	cout << "Choose a Shape: ";
+	//enter user input into shape variable
+	cin >> shape;
+	cout << "*********************\n" << endl;
+
+	//if else if statment for the shape the user chose. 
+	//each shape choice prompts a different call function call
+	//each shape choice also prompts user for additional info if needed
+	//parameters are sent to the respective function based on need
+	if (shape == "a" | shape == "A") {
+
+		double radius;
+		cout << "You chose a circle." << endl;
+		cout << "Enter the radius: ";
+		cin >> radius;
+		cout << "The area of the circle is " << circle(radius) << endl;
+
+	}
+	else if (shape == "b" | shape == "B") {
+
+		double height, width;
+		cout << "You chose a triangle." << endl;
+		cout << "Enter height of triangle: ";
+		cin >> height;
+		cout << "Enter width of triangle: ";
+		cin >> width;
+		cout << "The area of the triangle is: " << triangle(height, width) << endl;
+
+	}
+	else if (shape == "c" | shape == "C") {
+
+		double height, width;
+		cout << "You chose a rectangle." << endl;
+		cout << "Enter height of rectangle: ";
+		cin >> height;
+		cout << "Enter width of rectangle: ";
+		cin >> width;
+		cout << "The area of the rectangle is: " << rectangle(height, width) << endl;
+
+	}
+	else if (shape == "d" | shape == "D") {
+
+		double sideLength;
+		cout << "You chose square," << endl;
+		cout << "enter side length: ";
+		cin >> sideLength;
+		cout << "The area of the square is " << square(sideLength) << endl;
+	}
+
+	return 0;
+}
