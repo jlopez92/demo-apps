@@ -1,0 +1,39 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+
+	cout << fixed; //change output to fixed point
+	cout << setprecision(4); //need 4 decimal places
+
+	float initialVelocity; //initial velocity variable as float for decimals
+	float initialTime; //initial time variable as float for fractions of seconds(seconds)
+	float finalVelocity;//final velocity variable as float for decimals
+	float finalTime; //final time variable as float for fractions of seconds(seconds)
+
+	cout << "What is your initial velocity? (m/s): "; //request initial velocity from user
+	cin >> initialVelocity; //place user input into initial velocity variable 
+
+	cout << "What is your start time? (s): "; //request start time from user
+	cin >> initialTime; //place user input into initial time variable 
+
+	cout << "What is your final velocity? (m/s): "; //request final velocity from user
+	cin >> finalVelocity; //place user input into final velocity variable 
+
+	cout << "What is your stop time? (s): "; //request stop time from user
+	cin >> finalTime; //place user input into final time variable
+
+	float time; //create time variable for final calculation
+	float changeInVelocity; //create change in velocity variable
+	time = finalTime - initialTime; //calculate change in time
+	changeInVelocity = finalVelocity - initialVelocity; //calculate change in velocity
+
+	float averageAcceleration; //place accel into average acceleration variable
+	averageAcceleration = changeInVelocity / time; //calculate accel from change in velocity over change in time
+
+	cout << "your average accelleration is: " << averageAcceleration << "m/s^2"; //display average acceleration to user 
+	return 0;
+}
